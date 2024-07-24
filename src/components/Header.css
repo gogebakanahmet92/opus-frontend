@@ -2,46 +2,74 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #282c34;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif; /* Modern font */
 }
 
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: #61dafb;
+    color: #f0f0f0; /* Light color for better contrast */
 }
 
-.nav a {
-    color: white;
-    margin: 0 15px;
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #f0f0f0; /* Light color for better contrast */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-size: 1.2em; /* Larger font size */
 }
 
-.nav a:hover {
-    color: #61dafb;
+.nav-link:hover {
+    color: #61dafb; /* Highlight color */
     text-decoration: underline;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #f0f0f0; /* Light color for better contrast */
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+.nav-open {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background for overlay */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-    }
-
     .nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: none;
     }
 
-    .nav a {
-        margin: 10px 0;
+    .hamburger {
+        display: flex;
     }
 }

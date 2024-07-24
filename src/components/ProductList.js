@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ProductContext } from '../context/ProductContext';
-import './ProductList.css';
+import './Products.css';
 
-const ProductList = () => {
+const Products = () => {
     const { products } = useContext(ProductContext);
 
     return (
@@ -23,4 +23,4 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+export default Products;
